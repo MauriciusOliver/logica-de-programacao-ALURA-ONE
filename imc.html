@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>")      //variavel function para criar uma função de pular linhas
+            document.write("<br>")
+
+        };
+
+        function mostra(frase) {
+            
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function calculaImc(peso, altura) {
+
+            //var imc = peso / (altura * altura);
+            //return imc                            //comando feit de um jeito simples
+
+            return peso / (altura * altura);
+
+        }
+
+        //var pesoFlavio = 73;
+        //var alturaFlavio = 1.71;                  //comando feito de um jeito simples
+        //var imcFlavio = calculaImc(73, 1.71);
+
+        //var pesoAmigo = 68;
+        //var alturaAmigo = 1.72;                   //comando feito de um jeito simples
+        //var imcAmigo =  calculaImc(68, 1.72);
+
+        var nome = prompt("digite o seu nome")
+        var alturaInformada = prompt(nome + ", qual sua altura?");
+        var pesoInformado = prompt(nome + ", qual seu peso?");
+
+        var imc = calculaImc(pesoInformado, alturaInformada);
+
+        mostra(nome + ", O seu IMC é " + imc);
+
+        if(imc < 18.5) {
+
+            mostra("Voce esta abaixo do recomendado");
+        }
+
+
+        if(imc > 35) {
+            mostra("voce esta acima do recomendado");
+        }
+
+        if(imc >= 18.5 && imc <= 35) {
+
+                mostra("Seu IMC está excelente!")
+                
+        }
+
+    </script>
+    
+</body>
+</html>

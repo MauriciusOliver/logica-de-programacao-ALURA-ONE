@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input>
+    <button>Compare com o meu segredo </button>
+
+    <script>
+
+        function sorteia() {
+            
+            return Math.round(Math.random() * 10);
+
+        }
+
+        function sorteiaNumeros(quantidade) {
+
+            var segredos = []
+
+            var numero = 1
+
+            //while(numero <= quantidade) {
+
+                //segredos.push();              //esse é o jeito mais simples de fazer esse codigo mas é possivel ele repetir numeros se vc, nesse proximo codigo while que eu voce vai ver, nao terá riscos do numero repetir.
+                //numero++
+            //}
+
+            //return segredos
+
+            while(numero <= quantidade) {
+
+                var numeroAleatorio = sorteia();
+
+                achou = false;
+
+                if(numeroAleatorio !== 0) {
+
+                    for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+                        if(segredos[posicao] == numeroAleatorio)    {
+
+                            achou = true;
+                            break;
+                        }
+
+                    }
+
+                    if(achou == false) {
+
+                        segredos.push(numeroAleatorio);
+                        numero++
+
+                    }
+
+                }
+
+            }
+
+            return segredos
+
+        }
+
+        var segredos = sorteiaNumeros(5);
+
+        console.log(segredos)
+
+        var input = document.querySelector("input");
+        input.focus(); 
+
+        function verifica() {
+
+            var achou = false;
+
+            for(var posicao = 0; posicao < segredos.length; posicao++) { //esse .lenghth serve para eu nao precisar ficar atualizando o meu array no meu codigo, se eu n fosse usar o length o codigo ficaria assim: posicao < 5. 5 é a quantidade de elementos q eu tenho dentro do meu arrays([]) que é 5,7,10,2,3 e por isso o lenghth serve porque ele contabiliza automaticamente sempre q eu colocar novos numeros no meu arrays sem eu precisar ficar mudando manualmente para: posicao < 5, posicao < 6, posicao < 7...
+            
+                if(input.value == segredos[posicao]) {
+                alert("voce ACERTOU!");
+                achou = true;
+                break;
+            } 
+
+            if(achou = false) {
+                alert("voce ERROU!!!")
+            }
+
+            }
+
+
+            input.value = "";        //no final dessa função, esse "input.value = "" " indica que o valor dentro do input será zerado quando voce recarregar a pagina. o "" site ve como se fosse 0 e n mostra isso pro usuario e fica como um espaço vazio. 
+            input.focus();           //quando voce carrega a pagina ela ja fica com a caixa input marcada para voce colocar alguma coisa no input.
+        }
+
+
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+ 
+    </script>
+</body>
+</html>

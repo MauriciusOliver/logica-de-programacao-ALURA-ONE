@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>")      //variavel function para criar uma função para pular linhas
+            document.write("<br>")
+
+        };
+
+        function mostra(frase) {
+            
+            document.write(frase);
+            pulaLinha();
+        }
+
+     var multiplicador = 1;
+
+            //espaço 1          //espaço 2          //espaço 3      //cada espaço tem que ter o ; para finalizar.
+     for(var multiplicaodr = 1; multiplicador <= 10; multiplicador + 1) {  //no 'for' a inicialização do nosso multiplicador fica no 1 espaço(onde esta o var multiplicador = 1).  no 2 espaço fica a condição de repetição do nosso programa(multiplicador <= 10). no 3 espaço voce coloca o "multiplicador + 1" ou o que voce usou para terminar o loop infinito do while(multiplicador + 1). faça primeiro o "while" e depois voce arruma os codigo bonitinho pra juntar e botar tudo organizado no "for".    Aliás, quando queremos incrementar de um em um, podemos usar o pós incremento: multiplicador++. assim ele ira contar 1+1 ate o fim do codigo que seria 10, sem precisar botar multiplicador + 1;
+
+        mostra(7 * multiplicador);              
+
+     }
+
+     ///////////////while(multiplicador <= 10) {
+
+        ///////////////mostra(7 * multiplicador);
+        ///////////////multiplicador = multiplicador + 1;
+
+     ///////////////}
+
+     mostra("FIM")
+
+    </script>
+    </body>
